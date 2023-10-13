@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LifeSpot</title>
+    <link href="/Static/CSS/index.css" rel="stylesheet" type="text/css"/>
+    <style>
+        header, footer, aside, body, .navbar, .video-container {
+            font-family: "Helvetica 65 Medium", sans-serif;
+        }
+        header, footer, body, .video-container {
+            background-color: linen;
+        }
+    </style>
+</head>
+<body>
+    <header id="header-index">
+        <!--Заголовок страницы-->
+        <h1>LifeSpot — прямые трансляции с улиц</h1>
+        <!--Параграф-->
+        <p>Покажем, что происходит прямо сейчас</p>
+    </header>
+    <aside id="sidebar">
+        <div class="navbar">
+            <a href="/"><p>Все трансляции</p></a>
+            <a href="/"><p>О проекте</p></a>
+        </div>
+    </aside>
+    <div class="video-panel">
+        <div class="search-panel">
+            <input type="text" name="search_p" value="Начните поиск..." />
+        </div>
+        <!--Санкт-Петербург-->
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/h1wly909BYw?si=ya3cJVCS_hzqFx1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3>Санкт-Петербург, Невский Проспект</h3>
+        </div>
+        <!--Нью-Йорк-->
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/srlpC5tmhYs?si=D9P1wm3eL4vYsB14" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3>Нью-Йорк, Брайант Парк</h3>
+        </div>
+        <!--Лондон-->
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/QTuLupwR0s0?si=BAYXyDk0qEyE5zSr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <h3>Лондон, Мост Ватерлоо</h3>
+        </div>
+    </div>
+    <footer>
+        <p>LifeSpot - все права защищены</p>
+        <p>Связаться с нами: contact@lifespot.ru</p>
+    </footer>
+</body>
+</html>
