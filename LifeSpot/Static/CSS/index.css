@@ -32,12 +32,29 @@ aside {
         color: aliceblue;
 }
 
+.video-panel {
+    padding-left: 1%;
+}
+
+.search-panel {
+    margin-top: 10%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    font-size: 1.5em;
+    padding-left: 1%;
+    width: 50%;
+    height: 100%;
+}
+
 /* Простые селекторы*/
 .video-container {
     position: relative;
-    top: 200px;
+    top: 75px;
     display: inline-block;
-    padding-left: 1%;
     padding-top: 1%;
 }
 footer {
