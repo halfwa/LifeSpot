@@ -1,25 +1,41 @@
-﻿const age = prompt('Пожалуйста, введите ваш возраст.');
+﻿let sessionHandler = function() {
 
-if (age >= 18) {
-    alert('Приветствуем на LifeSpot! ' + new Date().toLocaleString());
+    let session = new Map();
+
+    session.set("userAgent", window.navigator.userAgent)
+    session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
+
+    if (session.get("age") >= 18) {
+
+        session.set("startDate", new Date().toLocaleString());
+
+        alert("Приветствуем на LifeSpot! " + '\n' + "Текущее время: " + session.get('startDate'));
+    }
+    else {
+        alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
+        window.location.href = "http://www.google.com";
+    }
+
+    // Вывод в консоль
+    for (let result of session) {
+        console.log(result)
+    }
 }
-else {
-    alert('Сайт содержит информацию для взрослых 18+');
-    window.location.href = "http://www.google.com";
+
+function filterContent(inputString) {
+
+    let elements = document.getElementsByClassName('video-container');
+
+    for (let i = 0; i < elements.length; i++) {
+
+        let videoContainer = elements[i];
+        let videoTitle = videoContainer.getElementsByTagName('h3')[0].textContent.toLowerCase();
+
+        if (videoTitle.includes(inputString)) {
+            videoContainer.setAttribute('style', 'display: inline-block');
+        }
+        else {
+            videoContainer.setAttribute('style', 'display: none');
+        }
+    }
 }
-
-//let elements = document.getElementsByClassName('video-container');
-//let inputString = document.getElementsByTagName('input')[0].value.toLowerCase();
-
-//for (let i = 0; i < elements.length; i++) {
-
-//    let videoContainer = elements[i];
-//    let videoTitle = videoContainer.getElementsByTagName('h3')[0].textContent.toLowerCase();
-
-//    if (videoTitle.includes(inputString)) {
-//        videoContainer.setAttribute('style', 'display: inline-block');
-//    }
-//    else {
-//        videoContainer.setAttribute('style', 'display: none');
-//    }
-//}

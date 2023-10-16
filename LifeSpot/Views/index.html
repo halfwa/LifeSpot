@@ -14,6 +14,9 @@
             background-color: linen;
         }
     </style>
+    <script>
+        sessionHandler();
+    </script>
 </head>
 <body> 
     <header id="header-index">
@@ -30,23 +33,7 @@
     </aside>
     <div class="video-panel">
         <div class="search-panel">
-            <input type="text" oninput="
-                   let elements=document.getElementsByClassName('video-container');
-                   let inputString=document.getElementsByTagName('input')[0].value.toLowerCase();
-                   for (let i=0; i < elements.length; i++) {
-
-            let videoContainer = elements[i];
-            let videoTitle = videoContainer.getElementsByTagName('h3')[0].textContent.toLowerCase();
-
-            if (videoTitle.includes(inputString)) {
-            videoContainer.setAttribute('style', 'display: inline-block');
-            }
-            else {
-            videoContainer.setAttribute('style', 'display: none');
-            }
-            }   
-
-            " size=50%>
+            <input type="text" oninput="filterContent(document.getElementsByTagName('input')[0].value.toLowerCase());" size=50%>
         </div>
         <!--Санкт-Петербург-->
         <div class="video-container">
