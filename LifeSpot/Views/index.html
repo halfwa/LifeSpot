@@ -1,39 +1,39 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/Static/JS/index.js"></script>
     <meta charset="UTF-8">
     <title>LifeSpot</title>
     <link href="/Static/CSS/index.css" rel="stylesheet" />
-    <style>
-        header, footer, aside, body, .navbar, .video-container {
-            font-family: "Helvetica 65 Medium", sans-serif;
+    <script src="/Static/JS/index.js"></script>
+    <script>
+        // Проверка на возраст
+        //checkAge();
+
+        // сохранение сессии
+        handleSession()
+
+        // вывод данных сессии в консоль
+        sessionLog()
+
+        // функция для получения пользовательского ввода
+        const inputParseFunction = function () {
+            return document.getElementsByTagName('input')[0].value.toLowerCase();
         }
 
-        header, footer, body, .video-container {
-            background-color: linen;
-        }
-    </style>
-    <script>
-        sessionHandler();
+        offerSubscribe()
     </script>
 </head>
-<body> 
+<body>
     <header id="header-index">
         <!--Заголовок страницы-->
         <h1>LifeSpot — прямые трансляции с улиц</h1>
         <!--Параграф-->
         <p>Покажем, что происходит прямо сейчас</p>
     </header>
-    <aside id="sidebar">
-        <div class="navbar">
-            <a href="/"><p>Все трансляции</p></a>
-            <a href="/"><p>О проекте</p></a>
-        </div>
-    </aside>
+    <!--SIDEBAR-->
     <div class="video-panel">
         <div class="search-panel">
-            <input type="text" oninput="filterContent(document.getElementsByTagName('input')[0].value.toLowerCase());" size=50%>
+            <input type="text" oninput="filterContent()" size=50%>
         </div>
         <!--Санкт-Петербург-->
         <div class="video-container">
@@ -51,9 +51,6 @@
             <h3>Лондон, Мост Ватерлоо</h3>
         </div>
     </div>
-    <footer>
-        <p>LifeSpot - все права защищены</p>
-        <p>Связаться с нами: contact@lifespot.ru</p>
-    </footer>
+    <!--FOOTER-->
 </body>
 </html>

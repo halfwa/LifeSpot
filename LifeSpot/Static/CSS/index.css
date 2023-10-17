@@ -1,4 +1,13 @@
-﻿body {
+﻿header, footer, aside, body, .navbar, .video-container {
+    font-family: "Helvetica 65 Medium", sans-serif;
+    font-size: 105%;
+}
+
+header, footer, body, .video-container {
+    background-color: linen;
+}
+
+body {
     padding-left: 11%;
 }
 
