@@ -1,24 +1,19 @@
-﻿
-/*
+﻿/*
 * Сессия теперь создается в общей области видимости.
 * Будет "захватываться" тремя функциями
 * 
-* */
-let session = new Map();
-
-function handleSession() {
-
-    session.set("userAgent", window.navigator.userAgent);
-    session.set("startDate", new Date().toLocaleString());
-
-    return session;
+* */ 
+let session = {
+    'startDate': new Date().toLocaleString(),
+    'userAgent': window.navigator.userAgent,
+    'userAge': prompt("Пожалуйста, введите ваш возраст?")
 }
-
+/*
+* Проверка возраста пользователя
+* 
+* */
 function checkAge() {
-
-    session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
-
-    if (session.get("age") >= 18) {
+    if (session.userAge >= 18) {
         alert("Приветствуем на LifeSpot! " + '\n' + "Текущее время: " + new Date().toLocaleString());
     }
     else {
@@ -27,32 +22,43 @@ function checkAge() {
     }
 }
 
-let sessionLog = function logSession() {
-
-    for (let result of session) {
-        console.log(result)
-    }
+/*
+* Вывод данных сессии в консоль
+* 
+* */
+let sessionLog = function () {
+    console.log('Начало сессии: ' + session.startDate)
+    console.log('Даныне клиента: ' + session.userAgent)
+    console.log('Возраст пользователя: : ' + session.userAge)
 }
+/*
+* Функция для фильтраци контента
+* Будет вызываться благодаря атрибуту oninput на index.html
+* 
+* */
 
-function filterContent() {
-
+function filterContent(){
     let elements = document.getElementsByClassName('video-container');
 
-    for (let i = 0; i < elements.length; i++) {
+    for (let i = 0; i <= elements.length; i++ ){
+        let videoText = elements[i].getElementsByTagName('h3')[0].innerText;
 
-        let videoContainer = elements[i];
-        let videoTitle = videoContainer.getElementsByTagName('h3')[0].textContent.toLowerCase();
-
-        if (videoTitle.includes(inputParseFunction())) {
-            videoContainer.setAttribute('style', 'display: inline-block');
-        }
-        else {
-            videoContainer.setAttribute('style', 'display: none');
+        if(!videoText.toLowerCase().includes(inputParseFunction().toLowerCase())){
+            elements[i].style.display = 'none';
+        } else {
+            elements[i].style.display = 'inline-block';
         }
     }
 }
 
-function offerSubscribe() {
+/*
+* Всплывающее окно будет показано по таймауту
+* 
+* */
+// setTimeout(() =>
+//     alert("Нравится LifeSpot? " + '\n' +  "Подпишитесь на наш Instagram @lifespot999!" ),
+// 7000);
 
-    setTimeout(() => alert("Нравится LifeSpot? " + '\n' + "Подпишитесь на наш Instagram @halfwa!"), 60000);
-}
+
+
+
