@@ -23,7 +23,7 @@ namespace LifeSpot
             logMode.Invoke();
         }
         
-        // Вывод информационныз сообщений 
+        // Вывод информационных сообщений 
         public static void Info(string message)
         {
             Console.ForegroundColor = ConsoleColor.Green;

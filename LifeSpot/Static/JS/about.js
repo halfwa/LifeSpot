@@ -3,36 +3,51 @@
 * и сохраним отзыв в объект
 * 
 * */
-function getReview() {
+function getComment() {
     // Создадим объект
-    let review = {}
+    let comment = {}
     
     // Сохраним свойство имени
-    review["userName"] = prompt("Как вас зовут ?")
-    if(review["userName"] == null){
+    comment.userName = prompt("Как вас зовут ?")
+    if (comment.userName == null){
         return
     }
     
     // Сохраним текст отзыва
-    review["comment"] = prompt("Напишите свой отзыв")
-    if(review["comment"] == null){
+    comment.text = prompt("Напишите свой отзыв")
+    if (comment.text == null){
         return
     }
     
-    // Сохраним текущее время
-    review["date"] = new Date().toLocaleString()
-    
-    // Добавим на страницу
-    writeReview(review)
+    comment.date = new Date().toLocaleString()
+
+    const result = confirm('Хотите что бы другие пользователи могли оценить ваш комментарий?');
+    if (result) {
+
+        let review = Object.create(comment);
+        review.rate = 0;
+        writeComment(review);
+    }
+    else {
+        writeComment(comment);
+    }
 }
 
 /*
 * Запишем отзыв на страницу 
-* 
+* `
 * */
-const writeReview = review => {
+const writeComment = review => {
+
+    let likeCounter = '';
+    if (review.hasOwnProperty('rate')) {
+        likeCounter = '<b>Рейтинг: </b>' + review.rate;
+    }
+
     document.getElementsByClassName('reviews')[0].innerHTML += '    <div class="review-text">\n' +
-        `<p> <i> <b>${review['userName']}</b>  ${review['date']}</i></p>` +
-        `<p>${review['comment']}</p>`  +
+        `<p> <i> <b>${review['userName']}</b>  ${review['date']}   ${likeCounter}</b> </i></p>` +
+        `<p>${review['text']}</p>` +
         '</div>';
 }
+
+        
