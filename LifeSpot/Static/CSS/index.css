@@ -3,7 +3,7 @@ header,footer,aside,body,.navbar,.video-container{
     font-family: "Helvetica 65 Medium", sans-serif;
 }
 
-header,footer,body,.video-container{
+header, footer, body, .video-container {
     background-color: linen;
 }
 
