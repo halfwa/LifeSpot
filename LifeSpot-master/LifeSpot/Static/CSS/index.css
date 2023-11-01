@@ -47,12 +47,10 @@ header{
     padding-left: 1%;
     padding-top: 1.2%;
 }
-/* Стиль хедера для главной страницы имеет приоритет, 
-так как используется селектор по идентификатору */
-#header-index{
+
+#header-index {
     color: #44453f;
 }
-
 /* Стили футера */
 footer {
     position: relative;

@@ -51,7 +51,7 @@ const writeComment = review => {
     }
 
     document.getElementsByClassName('reviews')[0].innerHTML += '    <div class="review-text">\n' +
-        `<p> <i> <b>${review['userName']}</b>  ${review['date']}   ${likeCounter}</b> </i></p>` +
+        `<p> <i> <b>${review['author']}</b>  ${review['date']}   ${likeCounter}</b> </i></p>` +
         `<p>${review['text']}</p>` +
         '</div>';
 }
