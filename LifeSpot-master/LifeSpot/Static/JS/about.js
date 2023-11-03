@@ -38,10 +38,6 @@ function addComment() {
     }
 }
 
-/*
-* Запишем отзыв на страницу 
-* `
-* */
 const writeComment = review => {
 
     let likeCounter = '';
@@ -75,4 +71,38 @@ function addLike(id) {
 
     // Обновим текст элемента
     element.innerText = array.join(' ');
-}        
+}      
+
+// Слайдер
+let slideIndex = 0;
+showIndex(slideIndex);
+
+function plusSlides(n) {
+    showIndex(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showIndex(slideIndex = n);
+}
+
+function showIndex(n) {
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length - 1) {
+        slideIndex = 0;
+    }
+    else if (n < 0) {
+        slideIndex = slides.length - 1;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (let i = 0; i < slides.length; i++) {
+        dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].classList.add("active");   
+}
