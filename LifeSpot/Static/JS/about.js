@@ -88,7 +88,7 @@ function currentSlide(n) {
 function showIndex(n) {
     let slides = document.getElementsByClassName("slide");
     let dots = document.getElementsByClassName("dot");
-
+     
     if (n > slides.length - 1) {
         slideIndex = 0;
     }
