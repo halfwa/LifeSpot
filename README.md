@@ -1,2 +1,2 @@
 # LifeSpot
-tmp rep for project
+HTML, CSS, JavaScript - tutorial project
